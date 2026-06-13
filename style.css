@@ -1,6 +1,6 @@
 /* Variáveis do Tema Vermelho Elegante */
 :root {
-    --bg-color: #F8F1F1;
+    --bg-color: #E6D5D5; /* Fundo um pouco mais escuro */
     --card-color: #FFFFFF;
     --highlight-color: #8B0000;
     --text-color: #333333;
@@ -21,6 +21,42 @@ body {
     font-family: var(--font-body);
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+/* Background Animation */
+#bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background: linear-gradient(135deg, var(--bg-color), #D8CACA);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.heart-particle {
+    position: absolute;
+    bottom: -10vh;
+    color: rgba(139, 0, 0, 0.15); /* Corações sutis */
+    animation: floatUp linear infinite;
+    z-index: -1;
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-110vh) rotate(360deg) scale(1.2); }
 }
 
 /* Typography */
